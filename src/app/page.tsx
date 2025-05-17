@@ -7,23 +7,6 @@ import HorizontalBar from "../components/ui/horizontal-bar"
 import { GitHubLogo } from "../components/ui/github-logo"
 import { Province, provinces } from "../data/provinces"
 
-// Definimos los posibles estados de la provincia
-type ProvinceStatus = "no-voting" | "voted" | "pending";
-
-// Mapa para el texto del panel
-const statusTextMap: Record<ProvinceStatus, string> = {
-  "no-voting": "no se vota",
-  "voted": "se votó",
-  "pending": "por votar",
-};
-
-// Mapa para los colores de los círculos
-const statusColorMap: Record<ProvinceStatus, string> = {
-  "no-voting": "bg-gray-300",
-  "voted": "bg-green-500",
-  "pending": "bg-yellow-500",
-};
-
 export default function Home() {
   const [activeProvince, setActiveProvince] = useState<Province | null>(null);
   const [panelPosition, setPanelPosition] = useState({ x: 0, y: 0 });
