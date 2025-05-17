@@ -134,18 +134,17 @@ export default function Home() {
                 style={{
                   left: panelPosition.x,
                   top: panelPosition.y,
-                  width: "500px",
                 }}
               >
                 <h2 className="text-xl font-bold mb-2 text-yellow-400 text-center">
                   {activeProvince.name} {getProvinceStatus(activeProvince).text}
                 </h2>
-                <div className="flex justify-between gap-4">
+                <div className="flex md:flex-row flex-col justify-between gap-4">
                   {/* Columna izquierda: Diputados */}
                   <div className="flex-1">
                     <h3 className="font-medium mb-1">Diputados</h3>
                     <p className="text-lg font-bold">{activeProvince.deputies}</p>
-                    <div className="mt-1">
+                    <div className="mt-1 w-50">
                       <h4 className="font-medium text-sm">Bancas por Partido</h4>
                       <p className="text-sm text-sky-500">Peronismo: {peronDeputies?.bancas} (-{peronDeputies?.loseBancas}/+{peronDeputies?.renewBancas}) 
                         <span className="font-bold"> {peronDeputies?.renewBancas != null ? peronDeputies?.bancas-peronDeputies?.loseBancas+peronDeputies?.renewBancas : ''}</span>
@@ -167,7 +166,7 @@ export default function Home() {
                     <h3 className="font-medium mb-1">Senadores</h3>
                     <p className="text-lg font-bold">{activeProvince.senators}</p>
                     {activeProvince.senators > 0 && (
-                      <div className="mt-1">
+                      <div className="mt-1 w-50">
                         <h4 className="font-medium text-sm">Bancas por Partido</h4>
                         <p className="text-sm text-sky-500">Peronismo: {peronSenate?.bancas} (-{peronSenate?.loseBancas}/+{peronSenate?.renewBancas}) 
                           <span className="font-bold"> {peronSenate?.renewBancas != null ? peronSenate?.bancas-peronSenate?.loseBancas+peronSenate?.renewBancas : ''}</span>
@@ -185,8 +184,11 @@ export default function Home() {
                     )}
                   </div>
                 </div>
+                <div className="text-center italic mt-4 opacity-70">
+                  partido: bancas actuales (-en juego/+ganadas) futuras
+                </div>
                 <div className="mt-2 text-center">
-                  <p className="text-sm text-right">Población: {activeProvince.population.toLocaleString()}</p>
+                  <p className="text-sm mt-4 text-right">Población: {activeProvince.population.toLocaleString()}</p>
                 </div>
               </div>
             )}
@@ -196,7 +198,7 @@ export default function Home() {
 
       <h2 className="flex mt-8">No tengo secretos:</h2>
       <a 
-        className="mt-6" 
+        className="mt-2" 
         href="https://github.com/fierillo/mapilla-politico-argentino">
         <GitHubLogo />
       </a>
