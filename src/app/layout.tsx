@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Mapilla politico Argentino",
-  description: "Evolucion del control de bancas provincial",
+  description: "Evolucion del control de bancas provinciales",
 };
 
 export default function RootLayout({
