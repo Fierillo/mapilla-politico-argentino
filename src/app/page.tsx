@@ -1,7 +1,7 @@
 // src/app/page.tsx
 "use client"
 
-import { useState, useRef, act } from "react"
+import { useState, useRef } from "react"
 import Image from "next/image"
 import HorizontalBar from "../components/ui/horizontal-bar"
 import { GitHubLogo } from "../components/ui/github-logo"
