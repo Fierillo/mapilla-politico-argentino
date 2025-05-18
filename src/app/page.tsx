@@ -144,7 +144,7 @@ export default function Home() {
                   <div className="flex-1">
                     <h3 className="font-medium mb-1">Diputados</h3>
                     <p className="text-lg font-bold">{activeProvince.deputies}</p>
-                    <div className="mt-1 w-50">
+                    <div className="mt-1 w-55">
                       <h4 className="font-medium text-sm">Bancas por Partido</h4>
                       <p className="text-sm text-sky-500">Peronismo: {peronDeputies?.bancas} (-{peronDeputies?.loseBancas}/+{peronDeputies?.renewBancas}) 
                         <span className="font-bold"> {peronDeputies?.renewBancas != null ? peronDeputies?.bancas-peronDeputies?.loseBancas+peronDeputies?.renewBancas : ''}</span>
@@ -166,7 +166,7 @@ export default function Home() {
                     <h3 className="font-medium mb-1">Senadores</h3>
                     <p className="text-lg font-bold">{activeProvince.senators}</p>
                     {activeProvince.senators > 0 && (
-                      <div className="mt-1 w-50">
+                      <div className="mt-1 w-55">
                         <h4 className="font-medium text-sm">Bancas por Partido</h4>
                         <p className="text-sm text-sky-500">Peronismo: {peronSenate?.bancas} (-{peronSenate?.loseBancas}/+{peronSenate?.renewBancas}) 
                           <span className="font-bold"> {peronSenate?.renewBancas != null ? peronSenate?.bancas-peronSenate?.loseBancas+peronSenate?.renewBancas : ''}</span>
