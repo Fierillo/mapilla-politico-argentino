@@ -26,6 +26,7 @@ export type ChamberBancas = {
     name: string;
     x: number;
     y: number;
+    date?: string;
     deputies: number;
     senators: number;
     population: number;
@@ -38,6 +39,7 @@ export type ChamberBancas = {
         name: "Buenos Aires", 
         x: 60, 
         y: 43, 
+        date: "7 de septiembre",
         deputies: 92, 
         senators: 46, 
         population: 17541141,
@@ -67,6 +69,7 @@ export type ChamberBancas = {
       name: "Ciudad Autónoma de Buenos Aires",
       x: 70,
       y: 40,
+      date: "18 de mayo",
       deputies: 60,
       senators: 0,
       population: 3075646,
@@ -90,6 +93,7 @@ export type ChamberBancas = {
       name: "Catamarca",
       x: 25,
       y: 19,
+      date: "26 de octubre",
       deputies: 41,
       senators: 16,
       population: 415438,
@@ -117,6 +121,7 @@ export type ChamberBancas = {
       name: "Chaco",
       x: 62,
       y: 17,
+      date: "11 de mayo",
       deputies: 32,
       senators: 0,
       population: 1204541,
@@ -162,6 +167,7 @@ export type ChamberBancas = {
       name: "Corrientes",
       x: 70,
       y: 22,
+      date: "agosto-octubre",
       deputies: 30,
       senators: 15,
       population: 1120801,
@@ -216,6 +222,7 @@ export type ChamberBancas = {
       name: "Formosa",
       x: 65,
       y: 12,
+      date: "29 de junio",
       deputies: 30,
       senators: 0,
       population: 605193,
@@ -231,6 +238,7 @@ export type ChamberBancas = {
       name: "Jujuy",
       x: 30,
       y: 5,
+      date: "11 de mayo",
       deputies: 48,
       senators: 0,
       population: 770881,
@@ -303,6 +311,7 @@ export type ChamberBancas = {
       name: "Misiones",
       x: 95,
       y: 17,
+      date: "8 de junio",
       deputies: 40,
       senators: 0,
       population: 1261294,
@@ -348,6 +357,7 @@ export type ChamberBancas = {
       name: "Salta",
       x: 43,
       y: 10,
+      date: "11 de mayo",
       deputies: 60,
       senators: 23,
       population: 1424397,
@@ -390,6 +400,7 @@ export type ChamberBancas = {
       name: "San Luis",
       x: 30,
       y: 40,
+      date: "11 de mayo",
       deputies: 43,
       senators: 9,
       population: 508328,
@@ -459,6 +470,7 @@ export type ChamberBancas = {
       name: "Santiago del Estero",
       x: 48,
       y: 20,
+      date: "agosto-octubre",
       deputies: 40,
       senators: 0,
       population: 978313,

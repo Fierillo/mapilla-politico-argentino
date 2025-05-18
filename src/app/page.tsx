@@ -1,7 +1,7 @@
 // src/app/page.tsx
 "use client"
 
-import { useState, useRef } from "react"
+import { useState, useRef, act } from "react"
 import Image from "next/image"
 import HorizontalBar from "../components/ui/horizontal-bar"
 import { GitHubLogo } from "../components/ui/github-logo"
@@ -35,12 +35,12 @@ export default function Home() {
       };
     } else if (hasRenewBancas) {
       return {
-        text: <span className="text-green-500 text-sm italic">(se votó)</span>,
+        text: <span className="text-green-500 text-sm italic">(se votó {activeProvince?.date})</span>,
         color: "bg-green-500"
       };
     } else {
       return {
-        text: <span className="text-sm italic">(por votar)</span>,
+        text: <span className="text-sm italic">(por votar {activeProvince?.date})</span>,
         color: "bg-yellow-500"
       };
     }
