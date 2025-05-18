@@ -281,7 +281,7 @@ export type ChamberBancas = {
       population: 1990338,
       parties: {
         peronismo: {
-          deputies: { bancas: 10, loseBancas: 6 },
+          deputies: { bancas: 10, loseBancas: 7 },
           senate: { bancas: 10, loseBancas: 7 }
         },
         ucr: {
@@ -293,8 +293,8 @@ export type ChamberBancas = {
           senate: { bancas: 0, loseBancas: 0 }
         },
         liberales: {
-          deputies: { bancas: 0, loseBancas: 0 },
-          senate: { bancas: 0, loseBancas: 0 }
+          deputies: { bancas: 9, loseBancas: 0 },
+          senate: { bancas: 8, loseBancas: 3 }
         }
       }
     },
@@ -308,8 +308,8 @@ export type ChamberBancas = {
       population: 1261294,
       parties: {
         peronismo: { deputies: { bancas: 25, loseBancas: 10 } },
-        ucr: { deputies: { bancas: 5, loseBancas: 4 } },
-        pro: { deputies: { bancas: 4, loseBancas: 2 } },
+        ucr: { deputies: { bancas: 6, loseBancas: 4 } },
+        pro: { deputies: { bancas: 5, loseBancas: 2 } },
         liberales: { deputies: { bancas: 0, loseBancas: 0 } }
       }
     },
@@ -322,10 +322,10 @@ export type ChamberBancas = {
       senators: 0,
       population: 664057,
       parties: {
-        peronismo: { deputies: { bancas: 13, loseBancas: 0 } },
-        ucr: { deputies: { bancas: 1, loseBancas: 0 } },
-        pro: { deputies: { bancas: 7, loseBancas: 0 } },
-        liberales: { deputies: { bancas: 0, loseBancas: 0 } }
+        peronismo: { deputies: { bancas: 14, loseBancas: 0 } },
+        ucr: { deputies: { bancas: 2, loseBancas: 0 } },
+        pro: { deputies: { bancas: 12, loseBancas: 0 } },
+        liberales: { deputies: { bancas: 5, loseBancas: 0 } }
       }
     },
     {
@@ -337,10 +337,10 @@ export type ChamberBancas = {
       senators: 0,
       population: 747610,
       parties: {
-        peronismo: { deputies: { bancas: 24, loseBancas: 0 } },
-        ucr: { deputies: { bancas: 2, loseBancas: 0 } },
+        peronismo: { deputies: { bancas: 20, loseBancas: 0 } },
+        ucr: { deputies: { bancas: 15, loseBancas: 0 } },
         pro: { deputies: { bancas: 9, loseBancas: 0 } },
-        liberales: { deputies: { bancas: 0, loseBancas: 0 } }
+        liberales: { deputies: { bancas: 2, loseBancas: 0 } }
       }
     },
     {
@@ -353,19 +353,19 @@ export type ChamberBancas = {
       population: 1424397,
       parties: {
         peronismo: {
-          deputies: { bancas: 56, loseBancas: 28, renewBancas: 21 },
+          deputies: { bancas: 51, loseBancas: 27, renewBancas: 20 },
           senate: { bancas: 23, loseBancas: 12, renewBancas: 11 }
         },
         ucr: {
-          deputies: { bancas: 1, loseBancas: 1, renewBancas: 0 },
+          deputies: { bancas: 4, loseBancas: 2, renewBancas: 0 },
           senate: { bancas: 0, loseBancas: 0, renewBancas: 0 }
         },
         pro: {
-          deputies: { bancas: 2, loseBancas: 1, renewBancas: 0 },
+          deputies: { bancas: 3, loseBancas: 1, renewBancas: 0 },
           senate: { bancas: 0, loseBancas: 0, renewBancas: 0 }
         },
         liberales: {
-          deputies: { bancas: 1, loseBancas: 0, renewBancas: 9 },
+          deputies: { bancas: 2, loseBancas: 0, renewBancas: 10 },
           senate: { bancas: 0, loseBancas: 0, renewBancas: 1 }
         }
       }
@@ -379,9 +379,9 @@ export type ChamberBancas = {
       senators: 0,
       population: 781217,
       parties: {
-        peronismo: { deputies: { bancas: 24, loseBancas: 0 } },
-        ucr: { deputies: { bancas: 1, loseBancas: 0 } },
-        pro: { deputies: { bancas: 10, loseBancas: 0 } },
+        peronismo: { deputies: { bancas: 23, loseBancas: 0 } },
+        ucr: { deputies: { bancas: 11, loseBancas: 0 } },
+        pro: { deputies: { bancas: 1, loseBancas: 0 } },
         liberales: { deputies: { bancas: 1, loseBancas: 0 } }
       }
     },
@@ -395,15 +395,15 @@ export type ChamberBancas = {
       population: 508328,
       parties: {
         peronismo: {
-          deputies: { bancas: 26, loseBancas: 22, renewBancas: 8 },
+          deputies: { bancas: 29, loseBancas: 22, renewBancas: 8 },
           senate: { bancas: 6, loseBancas: 3, renewBancas: 0 }
         },
         ucr: {
-          deputies: { bancas: 9, loseBancas: 1, renewBancas: 7 },
+          deputies: { bancas: 11, loseBancas: 1, renewBancas: 7 },
           senate: { bancas: 2, loseBancas: 1, renewBancas: 2 }
         },
         pro: {
-          deputies: { bancas: 8, loseBancas: 0, renewBancas: 7 },
+          deputies: { bancas: 3, loseBancas: 0, renewBancas: 7 },
           senate: { bancas: 1, loseBancas: 0, renewBancas: 2 }
         },
         liberales: {
@@ -421,9 +421,9 @@ export type ChamberBancas = {
       senators: 0,
       population: 365698,
       parties: {
-        peronismo: { deputies: { bancas: 10, loseBancas: 0 } },
-        ucr: { deputies: { bancas: 13, loseBancas: 0 } },
-        pro: { deputies: { bancas: 1, loseBancas: 0 } },
+        peronismo: { deputies: { bancas: 23, loseBancas: 0 } },
+        ucr: { deputies: { bancas: 1, loseBancas: 0 } },
+        pro: { deputies: { bancas: 0, loseBancas: 0 } },
         liberales: { deputies: { bancas: 0, loseBancas: 0 } }
       }
     },
@@ -437,20 +437,20 @@ export type ChamberBancas = {
       population: 3536418,
       parties: {
         peronismo: {
-          deputies: { bancas: 17, loseBancas: 0 },
-          senate: { bancas: 6, loseBancas: 0 }
+          deputies: { bancas: 13, loseBancas: 0 },
+          senate: { bancas: 5, loseBancas: 0 }
         },
         ucr: {
-          deputies: { bancas: 28, loseBancas: 0 },
-          senate: { bancas: 13, loseBancas: 0 }
+          deputies: { bancas: 23, loseBancas: 0 },
+          senate: { bancas: 11, loseBancas: 0 }
         },
         pro: {
-          deputies: { bancas: 0, loseBancas: 0 },
-          senate: { bancas: 0, loseBancas: 0 }
+          deputies: { bancas: 5, loseBancas: 0 },
+          senate: { bancas: 2, loseBancas: 0 }
         },
         liberales: {
-          deputies: { bancas: 2, loseBancas: 0 },
-          senate: { bancas: 0, loseBancas: 0 }
+          deputies: { bancas: 9, loseBancas: 0 },
+          senate: { bancas: 1, loseBancas: 0 }
         }
       }
     },
@@ -463,9 +463,9 @@ export type ChamberBancas = {
       senators: 0,
       population: 978313,
       parties: {
-        peronismo: { deputies: { bancas: 28, loseBancas: 12 } },
-        ucr: { deputies: { bancas: 0, loseBancas: 0 } },
-        pro: { deputies: { bancas: 5, loseBancas: 5 } },
+        peronismo: { deputies: { bancas: 35, loseBancas: 35 } },
+        ucr: { deputies: { bancas: 3, loseBancas: 3 } },
+        pro: { deputies: { bancas: 2, loseBancas: 2 } },
         liberales: { deputies: { bancas: 0, loseBancas: 0 } }
       }
     },
@@ -478,10 +478,10 @@ export type ChamberBancas = {
       senators: 0,
       population: 173432,
       parties: {
-        peronismo: { deputies: { bancas: 3, loseBancas: 0 } },
-        ucr: { deputies: { bancas: 3, loseBancas: 0 } },
+        peronismo: { deputies: { bancas: 8, loseBancas: 0 } },
+        ucr: { deputies: { bancas: 2, loseBancas: 0 } },
         pro: { deputies: { bancas: 0, loseBancas: 0 } },
-        liberales: { deputies: { bancas: 2, loseBancas: 0 } }
+        liberales: { deputies: { bancas: 5, loseBancas: 0 } }
       }
     },
     {
@@ -493,9 +493,9 @@ export type ChamberBancas = {
       senators: 0,
       population: 1694656,
       parties: {
-        peronismo: { deputies: { bancas: 36, loseBancas: 0 } },
-        ucr: { deputies: { bancas: 3, loseBancas: 0 } },
-        pro: { deputies: { bancas: 0, loseBancas: 0 } },
+        peronismo: { deputies: { bancas: 37, loseBancas: 0 } },
+        ucr: { deputies: { bancas: 9, loseBancas: 0 } },
+        pro: { deputies: { bancas: 2, loseBancas: 0 } },
         liberales: { deputies: { bancas: 1, loseBancas: 0 } }
       }
     }
