@@ -99,7 +99,7 @@ export default function HorizontalBar() {
                 }}
               >
                 <p className="text-sm">
-                  {party.charAt(0).toUpperCase() + party.slice(1)}: TOTAL {totalBancas} ({securedBancas} aseguradas, {renewBancas} renovadas, {enJuegoNoRenovadas} a cubrir)
+                  {party.charAt(0).toUpperCase() + party.slice(1)}: TOTAL {totalBancas} ({securedBancas} firmes, {renewBancas} renovadas, {loseBancas} vencen)
                 </p>
               </div>
             )}
