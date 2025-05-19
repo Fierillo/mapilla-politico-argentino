@@ -9,6 +9,7 @@ import { Province, provinces } from "../data/provinces"
 
 export default function Home() {
   const [activeProvince, setActiveProvince] = useState<Province | null>(null);
+  const [clicked, setClicked] = useState<boolean>(false);
   const [panelPosition, setPanelPosition] = useState({ x: 0, y: 0 });
   const mapContainerRef = useRef<HTMLDivElement>(null);
 
@@ -45,6 +46,23 @@ export default function Home() {
       };
     }
   };
+  const handleMouseLeave = () => {
+    if (!clicked) {
+      setActiveProvince(null);
+    }
+  }
+  const handleMouseEnter = (province: Province) => {
+    if(clicked) {
+      if(activeProvince?.id === province.id) {
+        setActiveProvince(null);
+      } else {
+        setClicked(false);
+        setActiveProvince(province);
+      }
+    } else {
+      setActiveProvince(province);
+    }
+  }
   
   // Manejar el movimiento del mouse y mantener el panel dentro del contenedor
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -119,9 +137,13 @@ export default function Home() {
                     top: `${province.y}%`,
                     transform: "translate(-50%, -50%)",
                   }}
-                  onMouseEnter={() => setActiveProvince(province)}
-                  onMouseLeave={() => setActiveProvince(null)}
+                  onMouseEnter={() => handleMouseEnter(province)}
+                  onMouseLeave={() => handleMouseLeave()}
                   onMouseMove={handleMouseMove}
+                  onClick={() => {
+                    setClicked(true);
+                    setActiveProvince(province);
+                  }}
                   title={province.name}
                 />
               );
