@@ -35,7 +35,7 @@ export default function HorizontalBar() {
     + sumBancas('ucr','loseBancas')
   )  
   
-  const totalBancas = (
+  const sumTotalBancas = (
     sumBancas('liberales','bancas')
     + sumBancas('peronismo','bancas')
     + sumBancas('pro','bancas')
@@ -45,37 +45,48 @@ export default function HorizontalBar() {
   return (
     <div className="w-full max-w-3xl mb-4">
       <h2 className="text-lg font-semibold mb-2 text-center">
-        Bancas Totales en Juego (2025): {totalLoseBancas} / {totalBancas}
+        Bancas Totales en Juego (2025): {totalLoseBancas} / {sumTotalBancas}
       </h2>
       <div className="flex h-6 border border-gray-300">
-        {parties.map((party) => {
-          const bancasTotales = sumBancas(party, 'bancas');        
-          const loseBancas = sumBancas(party, 'loseBancas');      
-          const renewBancas = sumBancas(party, 'renewBancas');   
+      {parties.map((party) => {
+          const securedBancas = sumBancas(party, "bancas") - sumBancas(party, "loseBancas");
+          const loseBancas = sumBancas(party, "loseBancas");
+          const renewBancas = sumBancas(party, "renewBancas");
+          const enJuegoNoRenovadas = Math.max(loseBancas - renewBancas, 0); // Bancas en juego no renovadas
+          const totalPartyBancas = securedBancas + enJuegoNoRenovadas + renewBancas; // Total del partido
 
-          const bancasNoEnJuego = bancasTotales - loseBancas;              
-          const bancasEnJuegoNoRenovadas = loseBancas - renewBancas;       
+          // Ancho del segmento del partido
+          const partyWidth = (totalPartyBancas / sumTotalBancas) * 100;  
 
           return (
             <div
               key={party}
               className="flex hover:brightness-125 cursor-pointer relative"
-              style={{ width: `${(bancasTotales / totalBancas) * 100}%` }}
+              style={{ width: `${partyWidth}%` }}
               onMouseEnter={() => setSelectedParty(party)}
               onMouseLeave={() => setSelectedParty(null)}
             >
-            <div
-              className={`bg-${colorMap[party]}-500 h-full`}
-              style={{ width: `${(bancasNoEnJuego / bancasTotales) * 100}%` }}
-            />
-            <div
-              className={`bg-${colorMap[party]}-700 h-full`}
-              style={{ width: `${(renewBancas / bancasTotales) * 100}%` }}
-            />
-            <div
-              className={`bg-${colorMap[party]}-200 h-full`}
-              style={{ width: `${(bancasEnJuegoNoRenovadas / bancasTotales) * 100}%` }}
-            />
+            {/* Bancas aseguradas */}
+            {securedBancas > 0 && (
+                <div
+                  className={`bg-${colorMap[party]}-500 h-full`}
+                  style={{ width: `${(securedBancas / totalPartyBancas) * 100}%` }}
+                />
+              )}
+              {/* Bancas en juego no renovadas */}
+              {enJuegoNoRenovadas > 0 && (
+                <div
+                  className={`bg-${colorMap[party]}-200 h-full`}
+                  style={{ width: `${(enJuegoNoRenovadas / totalPartyBancas) * 100}%` }}
+                />
+              )}
+              {/* Bancas renovadas/ganadas */}
+              {renewBancas > 0 && (
+                <div
+                  className={`bg-${colorMap[party]}-700 h-full`}
+                  style={{ width: `${(renewBancas / totalPartyBancas) * 100}%` }}
+                />
+              )}
             {/* Cuadro informativo al hacer clic */}
             {selectedParty === party && (
               <div
@@ -88,8 +99,7 @@ export default function HorizontalBar() {
                 }}
               >
                 <p className="text-sm">
-                  {party.charAt(0).toUpperCase() + party.slice(1)}: {bancasTotales} totales,{" "}
-                  {renewBancas} renovadas, {loseBancas} en juego
+                  {party.charAt(0).toUpperCase() + party.slice(1)}: {securedBancas} aseguradas, {renewBancas} renovadas, {enJuegoNoRenovadas} en juego
                 </p>
               </div>
             )}
