@@ -45,7 +45,7 @@ export default function HorizontalBar() {
   return (
     <div className="w-full max-w-3xl mb-4">
       <h2 className="text-lg font-semibold mb-2 text-center">
-        Bancas Totales en Juego (2025): {totalLoseBancas} / {sumTotalBancas}
+        Bancas totales en juego (2025): {totalLoseBancas} / {sumTotalBancas}
       </h2>
       <div className="flex h-6 border border-gray-300">
       {parties.map((party) => {
@@ -53,10 +53,10 @@ export default function HorizontalBar() {
           const loseBancas = sumBancas(party, "loseBancas");
           const renewBancas = sumBancas(party, "renewBancas");
           const enJuegoNoRenovadas = Math.max(loseBancas - renewBancas, 0); // Bancas en juego no renovadas
-          const totalPartyBancas = securedBancas + enJuegoNoRenovadas + renewBancas; // Total del partido
+          const totalBancas = securedBancas + renewBancas; // Total del partido
 
           // Ancho del segmento del partido
-          const partyWidth = (totalPartyBancas / sumTotalBancas) * 100;  
+          const partyWidth = (totalBancas + loseBancas / sumTotalBancas) * 100;  
 
           return (
             <div
@@ -70,21 +70,21 @@ export default function HorizontalBar() {
             {securedBancas > 0 && (
                 <div
                   className={`bg-${colorMap[party]}-500 h-full`}
-                  style={{ width: `${(securedBancas / totalPartyBancas) * 100}%` }}
-                />
-              )}
-              {/* Bancas en juego no renovadas */}
-              {enJuegoNoRenovadas > 0 && (
-                <div
-                  className={`bg-${colorMap[party]}-200 h-full`}
-                  style={{ width: `${(enJuegoNoRenovadas / totalPartyBancas) * 100}%` }}
+                  style={{ width: `${(securedBancas / totalBancas) * 100}%` }}
                 />
               )}
               {/* Bancas renovadas/ganadas */}
               {renewBancas > 0 && (
                 <div
                   className={`bg-${colorMap[party]}-700 h-full`}
-                  style={{ width: `${(renewBancas / totalPartyBancas) * 100}%` }}
+                  style={{ width: `${(renewBancas / totalBancas) * 100}%` }}
+                />
+              )}
+              {/* Bancas en juego no renovadas */}
+              {enJuegoNoRenovadas > 0 && (
+                <div
+                  className={`bg-${colorMap[party]}-200 h-full`}
+                  style={{ width: `${(enJuegoNoRenovadas / totalBancas) * 100}%` }}
                 />
               )}
             {/* Cuadro informativo al hacer clic */}
@@ -99,7 +99,7 @@ export default function HorizontalBar() {
                 }}
               >
                 <p className="text-sm">
-                  {party.charAt(0).toUpperCase() + party.slice(1)}: {securedBancas} aseguradas, {renewBancas} renovadas, {enJuegoNoRenovadas} en juego
+                  {party.charAt(0).toUpperCase() + party.slice(1)}: TOTAL {totalBancas} ({securedBancas} aseguradas, {renewBancas} renovadas, {enJuegoNoRenovadas} a cubrir)
                 </p>
               </div>
             )}
