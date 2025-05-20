@@ -15,7 +15,7 @@ export default function Home() {
 
   // Función para determinar el estado de la provincia
   const getProvinceStatus = (province: Province) => {
-    const parties = ["peronismo", "ucr", "pro", "liberales"] as const;
+    const parties = ["peronismo", "socialismo", "centro", "liberalismo"] as const;
     
     // Verificar si hay bancas renovadas (se votó)
     const hasRenewBancas = parties.some(party => 
@@ -89,15 +89,15 @@ export default function Home() {
     setPanelPosition({ x, y });
   };
 
-  const liberalDeputies = activeProvince?.parties.liberales.deputies
+  const liberalDeputies = activeProvince?.parties.liberalismo.deputies
   const peronDeputies = activeProvince?.parties.peronismo.deputies
-  const ucrDeputies = activeProvince?.parties.ucr.deputies
-  const proDeputies = activeProvince?.parties.pro.deputies
+  const socialistDeputies = activeProvince?.parties.socialismo.deputies
+  const centerDeputies = activeProvince?.parties.centro.deputies
 
-  const liberalSenate = activeProvince?.parties.liberales.senate
+  const liberalSenate = activeProvince?.parties.liberalismo.senate
   const peronSenate = activeProvince?.parties.peronismo.senate
-  const ucrSenate = activeProvince?.parties.ucr.senate
-  const proSenate = activeProvince?.parties.pro.senate
+  const socialistSenate = activeProvince?.parties.socialismo.senate
+  const centerSenate = activeProvince?.parties.centro.senate
 
   return (
     <main className="bg-blue-950 text-yellow-400 flex min-h-screen flex-col items-center justify-center p-4 md:p-24">
@@ -164,17 +164,17 @@ export default function Home() {
                     <p className="text-lg font-bold">{activeProvince.deputies}</p>
                     <div className="mt-1 w-55">
                       <h4 className="font-medium text-sm">Bancas por Partido</h4>
+                      <p className="text-sm text-purple-500">Liberalismo: {liberalDeputies?.bancas} (-{liberalDeputies?.loseBancas}/+{liberalDeputies?.renewBancas}) 
+                        <span className="font-bold"> {liberalDeputies?.renewBancas != null ? liberalDeputies?.bancas-liberalDeputies?.loseBancas+liberalDeputies?.renewBancas : ''}</span>
+                      </p>
+                      <p className="text-sm text-yellow-400">Centro: {centerDeputies?.bancas} (-{centerDeputies?.loseBancas}/+{centerDeputies?.renewBancas}) 
+                        <span className="font-bold"> {centerDeputies?.renewBancas != null ? centerDeputies?.bancas-centerDeputies?.loseBancas+centerDeputies?.renewBancas : ''}</span>
+                      </p>
                       <p className="text-sm text-sky-500">Peronismo: {peronDeputies?.bancas} (-{peronDeputies?.loseBancas}/+{peronDeputies?.renewBancas}) 
                         <span className="font-bold"> {peronDeputies?.renewBancas != null ? peronDeputies?.bancas-peronDeputies?.loseBancas+peronDeputies?.renewBancas : ''}</span>
                       </p>
-                      <p className="text-sm text-red-500">UCR: {ucrDeputies?.bancas} (-{ucrDeputies?.loseBancas}/+{ucrDeputies?.renewBancas}) 
-                        <span className="font-bold"> {ucrDeputies?.renewBancas != null ? ucrDeputies?.bancas-ucrDeputies?.loseBancas+ucrDeputies?.renewBancas : ''}</span>
-                      </p>
-                      <p className="text-sm text-yellow-400">PRO: {proDeputies?.bancas} (-{proDeputies?.loseBancas}/+{proDeputies?.renewBancas}) 
-                        <span className="font-bold"> {proDeputies?.renewBancas != null ? proDeputies?.bancas-proDeputies?.loseBancas+proDeputies?.renewBancas : ''}</span>
-                      </p>
-                      <p className="text-sm text-purple-500">Liberales: {liberalDeputies?.bancas} (-{liberalDeputies?.loseBancas}/+{liberalDeputies?.renewBancas}) 
-                        <span className="font-bold"> {liberalDeputies?.renewBancas != null ? liberalDeputies?.bancas-liberalDeputies?.loseBancas+liberalDeputies?.renewBancas : ''}</span>
+                      <p className="text-sm text-red-500">Socialismo: {socialistDeputies?.bancas} (-{socialistDeputies?.loseBancas}/+{socialistDeputies?.renewBancas}) 
+                        <span className="font-bold"> {socialistDeputies?.renewBancas != null ? socialistDeputies?.bancas-socialistDeputies?.loseBancas+socialistDeputies?.renewBancas : ''}</span>
                       </p>
                     </div>
                   </div>
@@ -186,17 +186,17 @@ export default function Home() {
                     {activeProvince.senators > 0 && (
                       <div className="mt-1 w-55">
                         <h4 className="font-medium text-sm">Bancas por Partido</h4>
+                        <p className="text-sm text-purple-500">Liberalismo: {liberalSenate?.bancas} (-{liberalSenate?.loseBancas}/+{liberalSenate?.renewBancas}) 
+                          <span className="font-bold"> {liberalSenate?.renewBancas != null ? liberalSenate?.bancas-liberalSenate?.loseBancas+liberalSenate?.renewBancas : ''}</span>
+                        </p>
+                        <p className="text-sm text-yellow-400">Centro: {centerSenate?.bancas} (-{centerSenate?.loseBancas}/+{centerSenate?.renewBancas}) 
+                          <span className="font-bold"> {centerSenate?.renewBancas != null ? centerSenate?.bancas-centerSenate?.loseBancas+centerSenate?.renewBancas : ''}</span>
+                        </p>
                         <p className="text-sm text-sky-500">Peronismo: {peronSenate?.bancas} (-{peronSenate?.loseBancas}/+{peronSenate?.renewBancas}) 
                           <span className="font-bold"> {peronSenate?.renewBancas != null ? peronSenate?.bancas-peronSenate?.loseBancas+peronSenate?.renewBancas : ''}</span>
                         </p>
-                        <p className="text-sm text-red-500">UCR: {ucrSenate?.bancas} (-{ucrSenate?.loseBancas}/+{ucrSenate?.renewBancas}) 
-                          <span className="font-bold"> {ucrSenate?.renewBancas != null ? ucrSenate?.bancas-ucrSenate?.loseBancas+ucrSenate?.renewBancas : ''}</span>
-                        </p>
-                        <p className="text-sm text-yellow-400">PRO: {proSenate?.bancas} (-{proSenate?.loseBancas}/+{proSenate?.renewBancas}) 
-                          <span className="font-bold"> {proSenate?.renewBancas != null ? proSenate?.bancas-proSenate?.loseBancas+proSenate?.renewBancas : ''}</span>
-                        </p>
-                        <p className="text-sm text-purple-500">Liberales: {liberalSenate?.bancas} (-{liberalSenate?.loseBancas}/+{liberalSenate?.renewBancas}) 
-                          <span className="font-bold"> {liberalSenate?.renewBancas != null ? liberalSenate?.bancas-liberalSenate?.loseBancas+liberalSenate?.renewBancas : ''}</span>
+                        <p className="text-sm text-red-500">Socialismo: {socialistSenate?.bancas} (-{socialistSenate?.loseBancas}/+{socialistSenate?.renewBancas}) 
+                          <span className="font-bold"> {socialistSenate?.renewBancas != null ? socialistSenate?.bancas-socialistSenate?.loseBancas+socialistSenate?.renewBancas : ''}</span>
                         </p>
                       </div>
                     )}

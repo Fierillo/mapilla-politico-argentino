@@ -15,9 +15,9 @@ export type PartyData = {
 
 export type Party = {
   peronismo: PartyData,
-  ucr: PartyData, 
-  pro: PartyData,
-  liberales: PartyData,
+  socialismo: PartyData, 
+  centro: PartyData,
+  liberalismo: PartyData,
 }
   
 // Tipo para una provincia
@@ -36,17 +36,17 @@ export type Province = {
 // Colores de cada partido
 export const partyColors: Record<keyof Party, string> = {
   peronismo: "sky",
-  ucr: "red",
-  pro: "yellow",
-  liberales: "purple",
+  socialismo: "red",
+  centro: "yellow",
+  liberalismo: "purple",
 };
 
 // Orden fijo de los partidos
 export const partyKeys: (keyof Party)[] = [
+  "socialismo",
   "peronismo",
-  "liberales",
-  "ucr",
-  "pro",
+  "centro",
+  "liberalismo",
 ];
   
   export const provinces: Province[] = [
@@ -64,15 +64,15 @@ export const partyKeys: (keyof Party)[] = [
               deputies: {bancas: 37, loseBancas: 19},
               senate: {bancas: 21, loseBancas: 10}
           },
-          ucr: {
-              deputies: {bancas: 27, loseBancas: 12},
-              senate: {bancas: 8, loseBancas: 7}
+          socialismo: {
+              deputies: {bancas: 2, loseBancas: 2},
+              senate: {bancas: 0, loseBancas: 0}
           },
-          pro: {
-              deputies: {bancas: 13, loseBancas: 8},
-              senate: {bancas: 9, loseBancas: 4}
+          centro: {
+              deputies: {bancas: 40, loseBancas: 20},
+              senate: {bancas: 17, loseBancas: 11}
           },
-          liberales: {
+          liberalismo: {
               deputies: {bancas: 13, loseBancas: 5},
               senate: {bancas: 8, loseBancas: 2}
           }
@@ -93,13 +93,13 @@ export const partyKeys: (keyof Party)[] = [
         peronismo: { 
             deputies: { bancas: 20, loseBancas: 8, renewBancas: 10 } 
         },
-        ucr: { 
-            deputies: { bancas: 8, loseBancas: 3, renewBancas: 0 } 
+        socialismo: { 
+            deputies: { bancas: 4, loseBancas: 3, renewBancas: 1 } 
         },
-        pro: { 
-            deputies: { bancas: 17, loseBancas: 8, renewBancas: 8 } 
+        centro: { 
+            deputies: { bancas: 25, loseBancas: 11, renewBancas: 8 } 
         },
-        liberales: { 
+        liberalismo: { 
             deputies: { bancas: 11, loseBancas: 8, renewBancas: 11 } 
         }
       }
@@ -118,15 +118,15 @@ export const partyKeys: (keyof Party)[] = [
           deputies: { bancas: 24, loseBancas: 13 },
           senate: { bancas: 14, loseBancas: 6 }
         },
-        ucr: {
-          deputies: { bancas: 10, loseBancas: 7 },
-          senate: { bancas: 2, loseBancas: 2 }
-        },
-        pro: {
-          deputies: { bancas: 3, loseBancas: 1 },
+        socialismo: {
+          deputies: { bancas: 0, loseBancas: 0 },
           senate: { bancas: 0, loseBancas: 0 }
         },
-        liberales: {
+        centro: {
+          deputies: { bancas: 13, loseBancas: 8 },
+          senate: { bancas: 2, loseBancas: 2 }
+        },
+        liberalismo: {
           deputies: { bancas: 4, loseBancas: 0 },
           senate: { bancas: 0, loseBancas: 0 }
         }
@@ -143,9 +143,9 @@ export const partyKeys: (keyof Party)[] = [
       population: 1204541,
       parties: {
         peronismo: { deputies: { bancas: 17, loseBancas: 9, renewBancas: 8 } },
-        ucr: { deputies: { bancas: 8, loseBancas: 5, renewBancas: 4 } },
-        pro: { deputies: { bancas: 7, loseBancas: 2, renewBancas: 0 } },
-        liberales: { deputies: { bancas: 0, loseBancas: 0, renewBancas: 4 } }
+        socialismo: { deputies: { bancas: 0, loseBancas: 0, renewBancas: 0 } },
+        centro: { deputies: { bancas: 15, loseBancas: 7, renewBancas: 4 } },
+        liberalismo: { deputies: { bancas: 0, loseBancas: 0, renewBancas: 4 } }
       }
     },
     {
@@ -158,9 +158,9 @@ export const partyKeys: (keyof Party)[] = [
       population: 618994,
       parties: {
         peronismo: { deputies: { bancas: 7, loseBancas: 0 } },
-        ucr: { deputies: { bancas: 9, loseBancas: 0 } },
-        pro: { deputies: { bancas: 8, loseBancas: 0 } },
-        liberales: { deputies: { bancas: 2, loseBancas: 0 } }
+        socialismo: { deputies: { bancas: 1, loseBancas: 0 } },
+        centro: { deputies: { bancas: 17, loseBancas: 0 } },
+        liberalismo: { deputies: { bancas: 2, loseBancas: 0 } }
       }
     },
     {
@@ -173,9 +173,9 @@ export const partyKeys: (keyof Party)[] = [
       population: 3760450,
       parties: {
         peronismo: { deputies: { bancas: 39, loseBancas: 0 }},
-        ucr: { deputies: { bancas: 26, loseBancas: 0 }},
-        pro: { deputies: { bancas: 3, loseBancas: 0 }},
-        liberales: { deputies: { bancas: 1, loseBancas: 0 }}
+        socialismo: { deputies: { bancas: 1, loseBancas: 0 }},
+        centro: { deputies: { bancas: 29, loseBancas: 0 }},
+        liberalismo: { deputies: { bancas: 1, loseBancas: 0 }}
       }
     },
     {
@@ -192,15 +192,15 @@ export const partyKeys: (keyof Party)[] = [
           deputies: { bancas: 7, loseBancas: 1 },
           senate: { bancas: 4, loseBancas: 1 }
         },
-        ucr: {
-          deputies: { bancas: 8, loseBancas: 5 },
-          senate: { bancas: 4, loseBancas: 2 }
+        socialismo: {
+          deputies: { bancas: 0, loseBancas: 0 },
+          senate: { bancas: 0, loseBancas: 0 }
         },
-        pro: {
-          deputies: { bancas: 7, loseBancas: 4 },
-          senate: { bancas: 3, loseBancas: 1 }
+        centro: {
+          deputies: { bancas: 15, loseBancas: 9 },
+          senate: { bancas: 7, loseBancas: 3 }
         },
-        liberales: {
+        liberalismo: {
           deputies: { bancas: 8, loseBancas: 5 },
           senate: { bancas: 4, loseBancas: 1 }
         }
@@ -212,22 +212,22 @@ export const partyKeys: (keyof Party)[] = [
       x: 65,
       y: 30,
       deputies: 34,
-      senators: 18,
+      senators: 17,
       population: 1385961,
       parties: {
         peronismo: {
           deputies: { bancas: 14, loseBancas: 0 },
           senate: { bancas: 9, loseBancas: 0 }
         },
-        ucr: {
-          deputies: { bancas: 9, loseBancas: 0 },
-          senate: { bancas: 4, loseBancas: 0 }
+        socialismo: {
+          deputies: { bancas: 0, loseBancas: 0 },
+          senate: { bancas: 0, loseBancas: 0 }
         },
-        pro: {
-          deputies: { bancas: 9, loseBancas: 0 },
-          senate: { bancas: 4, loseBancas: 0 }
+        centro: {
+          deputies: { bancas: 18, loseBancas: 0 },
+          senate: { bancas: 8, loseBancas: 0 }
         },
-        liberales: {
+        liberalismo: {
           deputies: { bancas: 2, loseBancas: 0 },
           senate: { bancas: 0, loseBancas: 0 }
         }
@@ -244,9 +244,9 @@ export const partyKeys: (keyof Party)[] = [
       population: 605193,
       parties: {
         peronismo: { deputies: { bancas: 22, loseBancas: 9 } },
-        ucr: { deputies: { bancas: 4, loseBancas: 3 } },
-        pro: { deputies: { bancas: 3, loseBancas: 3 } },
-        liberales: { deputies: { bancas: 0, loseBancas: 0 } }
+        socialismo: { deputies: { bancas: 0, loseBancas: 0 } },
+        centro: { deputies: { bancas: 8, loseBancas: 6 } },
+        liberalismo: { deputies: { bancas: 0, loseBancas: 0 } }
       }
     },
     {
@@ -260,9 +260,9 @@ export const partyKeys: (keyof Party)[] = [
       population: 770881,
       parties: {
         peronismo: { deputies: { bancas: 12, loseBancas: 6, renewBancas: 3 } },
-        ucr: { deputies: { bancas: 17, loseBancas: 9, renewBancas: 6 } },
-        pro: { deputies: { bancas: 16, loseBancas: 9, renewBancas: 6 } },
-        liberales: { deputies: { bancas: 0, loseBancas: 0, renewBancas: 7 } }
+        socialismo: { deputies: { bancas: 3, loseBancas: 0, renewBancas: 2 } },
+        centro: { deputies: { bancas: 33, loseBancas: 18, renewBancas: 12 } },
+        liberalismo: { deputies: { bancas: 0, loseBancas: 0, renewBancas: 7 } }
       }
     },
     {
@@ -275,9 +275,9 @@ export const partyKeys: (keyof Party)[] = [
       population: 358428,
       parties: {
         peronismo: { deputies: { bancas: 17, loseBancas: 0 } },
-        ucr: { deputies: { bancas: 7, loseBancas: 0 } },
-        pro: { deputies: { bancas: 6, loseBancas: 0 } },
-        liberales: { deputies: { bancas: 0, loseBancas: 0 } }
+        socialismo: { deputies: { bancas: 0, loseBancas: 0 } },
+        centro: { deputies: { bancas: 13, loseBancas: 0 } },
+        liberalismo: { deputies: { bancas: 0, loseBancas: 0 } }
       }
     },
     {
@@ -291,9 +291,9 @@ export const partyKeys: (keyof Party)[] = [
       population: 393531,
       parties: {
         peronismo: { deputies: { bancas: 32, loseBancas: 15 } },
-        ucr: { deputies: { bancas: 2, loseBancas: 1 } },
-        pro: { deputies: { bancas: 0, loseBancas: 0 } },
-        liberales: { deputies: { bancas: 2, loseBancas: 2 } }
+        socialismo: { deputies: { bancas: 0, loseBancas: 0 } },
+        centro: { deputies: { bancas: 2, loseBancas: 1 } },
+        liberalismo: { deputies: { bancas: 2, loseBancas: 2 } }
       }
     },
     {
@@ -310,15 +310,15 @@ export const partyKeys: (keyof Party)[] = [
           deputies: { bancas: 10, loseBancas: 7 },
           senate: { bancas: 10, loseBancas: 7 }
         },
-        ucr: {
-          deputies: { bancas: 22, loseBancas: 11 },
-          senate: { bancas: 19, loseBancas: 9 }
-        },
-        pro: {
-          deputies: { bancas: 4, loseBancas: 4 },
+        socialismo: {
+          deputies: { bancas: 0, loseBancas: 0 },
           senate: { bancas: 0, loseBancas: 0 }
         },
-        liberales: {
+        centro: {
+          deputies: { bancas: 29, loseBancas: 17 },
+          senate: { bancas: 20, loseBancas: 9 }
+        },
+        liberalismo: {
           deputies: { bancas: 9, loseBancas: 0 },
           senate: { bancas: 8, loseBancas: 3 }
         }
@@ -334,10 +334,10 @@ export const partyKeys: (keyof Party)[] = [
       senators: 0,
       population: 1261294,
       parties: {
-        peronismo: { deputies: { bancas: 25, loseBancas: 10 } },
-        ucr: { deputies: { bancas: 6, loseBancas: 4 } },
-        pro: { deputies: { bancas: 5, loseBancas: 2 } },
-        liberales: { deputies: { bancas: 0, loseBancas: 0 } }
+        peronismo: { deputies: { bancas: 29, loseBancas: 13 } },
+        socialismo: { deputies: { bancas: 0, loseBancas: 0 } },
+        centro: { deputies: { bancas: 11, loseBancas: 7 } },
+        liberalismo: { deputies: { bancas: 0, loseBancas: 0 } }
       }
     },
     {
@@ -350,9 +350,9 @@ export const partyKeys: (keyof Party)[] = [
       population: 664057,
       parties: {
         peronismo: { deputies: { bancas: 14, loseBancas: 0 } },
-        ucr: { deputies: { bancas: 2, loseBancas: 0 } },
-        pro: { deputies: { bancas: 12, loseBancas: 0 } },
-        liberales: { deputies: { bancas: 5, loseBancas: 0 } }
+        socialismo: { deputies: { bancas: 2, loseBancas: 0 } },
+        centro: { deputies: { bancas: 14, loseBancas: 0 } },
+        liberalismo: { deputies: { bancas: 5, loseBancas: 0 } }
       }
     },
     {
@@ -365,9 +365,9 @@ export const partyKeys: (keyof Party)[] = [
       population: 747610,
       parties: {
         peronismo: { deputies: { bancas: 20, loseBancas: 0 } },
-        ucr: { deputies: { bancas: 15, loseBancas: 0 } },
-        pro: { deputies: { bancas: 9, loseBancas: 0 } },
-        liberales: { deputies: { bancas: 2, loseBancas: 0 } }
+        socialismo: { deputies: { bancas: 0, loseBancas: 0 } },
+        centro: { deputies: { bancas: 24, loseBancas: 0 } },
+        liberalismo: { deputies: { bancas: 2, loseBancas: 0 } }
       }
     },
     {
@@ -381,19 +381,19 @@ export const partyKeys: (keyof Party)[] = [
       population: 1424397,
       parties: {
         peronismo: {
-          deputies: { bancas: 51, loseBancas: 27, renewBancas: 20 },
-          senate: { bancas: 23, loseBancas: 12, renewBancas: 11 }
+          deputies: { bancas: 40, loseBancas: 19, renewBancas: 20 },
+          senate: { bancas: 20, loseBancas: 10, renewBancas: 11 }
         },
-        ucr: {
-          deputies: { bancas: 4, loseBancas: 2, renewBancas: 0 },
+        socialismo: {
+          deputies: { bancas: 0, loseBancas: 0, renewBancas: 0 },
           senate: { bancas: 0, loseBancas: 0, renewBancas: 0 }
         },
-        pro: {
-          deputies: { bancas: 3, loseBancas: 1, renewBancas: 0 },
-          senate: { bancas: 0, loseBancas: 0, renewBancas: 0 }
+        centro: {
+          deputies: { bancas: 16, loseBancas: 9, renewBancas: 0 },
+          senate: { bancas: 3, loseBancas: 2, renewBancas: 0 }
         },
-        liberales: {
-          deputies: { bancas: 2, loseBancas: 0, renewBancas: 10 },
+        liberalismo: {
+          deputies: { bancas: 4, loseBancas: 2, renewBancas: 10 },
           senate: { bancas: 0, loseBancas: 0, renewBancas: 1 }
         }
       }
@@ -408,9 +408,9 @@ export const partyKeys: (keyof Party)[] = [
       population: 781217,
       parties: {
         peronismo: { deputies: { bancas: 23, loseBancas: 0 } },
-        ucr: { deputies: { bancas: 11, loseBancas: 0 } },
-        pro: { deputies: { bancas: 1, loseBancas: 0 } },
-        liberales: { deputies: { bancas: 1, loseBancas: 0 } }
+        socialismo: { deputies: { bancas: 0, loseBancas: 0 } },
+        centro: { deputies: { bancas: 12, loseBancas: 0 } },
+        liberalismo: { deputies: { bancas: 1, loseBancas: 0 } }
       }
     },
     {
@@ -424,18 +424,18 @@ export const partyKeys: (keyof Party)[] = [
       population: 508328,
       parties: {
         peronismo: {
-          deputies: { bancas: 29, loseBancas: 22, renewBancas: 8 },
+          deputies: { bancas: 26, loseBancas: 22, renewBancas: 8 },
           senate: { bancas: 6, loseBancas: 3, renewBancas: 0 }
         },
-        ucr: {
-          deputies: { bancas: 11, loseBancas: 1, renewBancas: 7 },
-          senate: { bancas: 2, loseBancas: 1, renewBancas: 2 }
+        socialismo: {
+          deputies: { bancas: 0, loseBancas: 0, renewBancas: 0 },
+          senate: { bancas: 0, loseBancas: 0, renewBancas: 0 }
         },
-        pro: {
-          deputies: { bancas: 3, loseBancas: 0, renewBancas: 7 },
-          senate: { bancas: 1, loseBancas: 0, renewBancas: 2 }
+        centro: {
+          deputies: { bancas: 17, loseBancas: 1, renewBancas: 14 },
+          senate: { bancas: 3, loseBancas: 1, renewBancas: 4 }
         },
-        liberales: {
+        liberalismo: {
           deputies: { bancas: 0, loseBancas: 0, renewBancas: 0 },
           senate: { bancas: 0, loseBancas: 0, renewBancas: 0 }
         }
@@ -451,9 +451,9 @@ export const partyKeys: (keyof Party)[] = [
       population: 365698,
       parties: {
         peronismo: { deputies: { bancas: 23, loseBancas: 0 } },
-        ucr: { deputies: { bancas: 1, loseBancas: 0 } },
-        pro: { deputies: { bancas: 0, loseBancas: 0 } },
-        liberales: { deputies: { bancas: 0, loseBancas: 0 } }
+        socialismo: { deputies: { bancas: 0, loseBancas: 0 } },
+        centro: { deputies: { bancas: 1, loseBancas: 0 } },
+        liberalismo: { deputies: { bancas: 0, loseBancas: 0 } }
       }
     },
     {
@@ -469,15 +469,15 @@ export const partyKeys: (keyof Party)[] = [
           deputies: { bancas: 13, loseBancas: 0 },
           senate: { bancas: 5, loseBancas: 0 }
         },
-        ucr: {
-          deputies: { bancas: 23, loseBancas: 0 },
-          senate: { bancas: 11, loseBancas: 0 }
+        socialismo: {
+          deputies: { bancas: 0, loseBancas: 0 },
+          senate: { bancas: 0, loseBancas: 0 }
         },
-        pro: {
-          deputies: { bancas: 5, loseBancas: 0 },
-          senate: { bancas: 2, loseBancas: 0 }
+        centro: {
+          deputies: { bancas: 28, loseBancas: 0 },
+          senate: { bancas: 13, loseBancas: 0 }
         },
-        liberales: {
+        liberalismo: {
           deputies: { bancas: 9, loseBancas: 0 },
           senate: { bancas: 1, loseBancas: 0 }
         }
@@ -494,9 +494,9 @@ export const partyKeys: (keyof Party)[] = [
       population: 978313,
       parties: {
         peronismo: { deputies: { bancas: 35, loseBancas: 35 } },
-        ucr: { deputies: { bancas: 3, loseBancas: 3 } },
-        pro: { deputies: { bancas: 2, loseBancas: 2 } },
-        liberales: { deputies: { bancas: 0, loseBancas: 0 } }
+        socialismo: { deputies: { bancas: 0, loseBancas: 0 } },
+        centro: { deputies: { bancas: 5, loseBancas: 5 } },
+        liberalismo: { deputies: { bancas: 0, loseBancas: 0 } }
       }
     },
     {
@@ -509,9 +509,9 @@ export const partyKeys: (keyof Party)[] = [
       population: 173432,
       parties: {
         peronismo: { deputies: { bancas: 8, loseBancas: 0 } },
-        ucr: { deputies: { bancas: 2, loseBancas: 0 } },
-        pro: { deputies: { bancas: 0, loseBancas: 0 } },
-        liberales: { deputies: { bancas: 5, loseBancas: 0 } }
+        socialismo: { deputies: { bancas: 0, loseBancas: 0 } },
+        centro: { deputies: { bancas: 2, loseBancas: 0 } },
+        liberalismo: { deputies: { bancas: 5, loseBancas: 0 } }
       }
     },
     {
@@ -524,9 +524,9 @@ export const partyKeys: (keyof Party)[] = [
       population: 1694656,
       parties: {
         peronismo: { deputies: { bancas: 37, loseBancas: 0 } },
-        ucr: { deputies: { bancas: 9, loseBancas: 0 } },
-        pro: { deputies: { bancas: 2, loseBancas: 0 } },
-        liberales: { deputies: { bancas: 1, loseBancas: 0 } }
+        socialismo: { deputies: { bancas: 0, loseBancas: 0 } },
+        centro: { deputies: { bancas: 11, loseBancas: 0 } },
+        liberalismo: { deputies: { bancas: 1, loseBancas: 0 } }
       }
     }
   ]
