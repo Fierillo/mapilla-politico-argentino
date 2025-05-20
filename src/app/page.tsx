@@ -131,7 +131,7 @@ export default function Home() {
                   style={{
                     left: `${province.x}%`,
                     top: `${province.y}%`,
-                    transform: "translate(50%, 50%)",
+                    transform: "translate(-50%, -50%)",
                   }}
                   onMouseEnter={() => handleMouseEnter(province)}
                   onMouseLeave={() => setActiveProvince(null)}
