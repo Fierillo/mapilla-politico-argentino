@@ -1,46 +1,32 @@
 "use client";
 
-import { provinces } from "@/src/data/provinces";
+import { ChamberBancas, Party, partyColors, partyKeys, provinces } from "@/src/data/provinces";
 import { useState } from "react";
 
-type Party = "peronismo" | "ucr" | "pro" | "liberales";
-type BancasType = 'bancas' | 'loseBancas' | 'renewBancas'
-
-const parties: Party[] = ["peronismo", "liberales", "ucr", "pro"];
-const colorMap: Record<Party, string> = {
-  peronismo: "sky",
-  liberales: "purple",
-  ucr: "red",
-  pro: "yellow",
-};
-
 export default function HorizontalBar() {
-  const [selectedParty, setSelectedParty] = useState<Party | null>(null);
+  const [selectedParty, setSelectedParty] = useState<keyof Party | null>(null);
   
-  function sumBancas (party: Party, bancasType: BancasType) {
-    return provinces.reduce(
-      (acc, province) => {
+  function sumBancas (party: keyof Party, bancasType: keyof ChamberBancas) {
+    return provinces.reduce((acc, province) => {
         const partyData = province.parties[party];
-        acc += (partyData.deputies?.[bancasType] || 0) + (partyData.senate?.[bancasType] || 0);
+        acc += 
+          (partyData.deputies?.[bancasType] || 0) 
+          + (partyData.senate?.[bancasType] || 0);
         return acc;
       },
       0
     );
   }  
   
-  const totalLoseBancas = (
-    sumBancas('liberales','loseBancas')
-    + sumBancas('peronismo','loseBancas')
-    + sumBancas('pro','loseBancas')
-    + sumBancas('ucr','loseBancas')
-  )  
-  
-  const sumTotalBancas = (
-    sumBancas('liberales','bancas')
-    + sumBancas('peronismo','bancas')
-    + sumBancas('pro','bancas')
-    + sumBancas('ucr','bancas')
-  )  
+  const totalLoseBancas = partyKeys.reduce(
+    (acc, party) => acc + sumBancas(party, "loseBancas"),
+    0
+  );
+
+  const sumTotalBancas = partyKeys.reduce(
+    (acc, party) => acc + sumBancas(party, "bancas"),
+    0
+  );
   
   return (
     <div className="w-full max-w-3xl mb-4">
@@ -48,14 +34,13 @@ export default function HorizontalBar() {
         Bancas totales en juego (2025): {totalLoseBancas} / {sumTotalBancas}
       </h2>
       <div className="flex h-6 border border-gray-300">
-      {parties.map((party) => {
+      {partyKeys.map((party) => {
           const securedBancas = sumBancas(party, "bancas") - sumBancas(party, "loseBancas");
           const loseBancas = sumBancas(party, "loseBancas");
           const renewBancas = sumBancas(party, "renewBancas");
           const enJuegoNoRenovadas = Math.max(loseBancas - renewBancas, 0); // Bancas en juego no renovadas
           const totalBancas = securedBancas + renewBancas; // Total del partido
 
-          // Ancho del segmento del partido
           const partyWidth = (totalBancas + loseBancas / sumTotalBancas) * 100;  
 
           return (
@@ -69,21 +54,21 @@ export default function HorizontalBar() {
             {/* Bancas aseguradas */}
             {securedBancas > 0 && (
                 <div
-                  className={`bg-${colorMap[party]}-500 h-full`}
+                  className={`bg-${partyColors[party]}-500 h-full`}
                   style={{ width: `${(securedBancas / totalBancas) * 100}%` }}
                 />
               )}
               {/* Bancas renovadas/ganadas */}
               {renewBancas > 0 && (
                 <div
-                  className={`bg-${colorMap[party]}-700 h-full`}
+                  className={`bg-${partyColors[party]}-700 h-full`}
                   style={{ width: `${(renewBancas / totalBancas) * 100}%` }}
                 />
               )}
               {/* Bancas en juego no renovadas */}
               {enJuegoNoRenovadas > 0 && (
                 <div
-                  className={`bg-${colorMap[party]}-200 h-full`}
+                  className={`bg-${partyColors[party]}-200 h-full`}
                   style={{ width: `${(enJuegoNoRenovadas / totalBancas) * 100}%` }}
                 />
               )}

@@ -2,36 +2,52 @@
 
 // Tipo para las bancas de una cámara (Diputados o Senadores)
 export type ChamberBancas = {
-    bancas: number;
-    loseBancas: number;
-    renewBancas?: number;
-  };
+  bancas: number;
+  loseBancas: number;
+  renewBancas?: number;
+};
   
-  // Tipo para los datos de un partido
-  export type PartyData = {
-    deputies: ChamberBancas;
-    senate?: ChamberBancas; // Opcional, ya que no todas las provincias tienen Senado
-  };
+// Tipo para los datos de un partido
+export type PartyData = { 
+  deputies: ChamberBancas;
+  senate?: ChamberBancas; // Opcional, ya que no todas las provincias tienen Senado
+};
 
-  export type Party = {
-    peronismo: PartyData,
-    ucr: PartyData,
-    pro: PartyData,
-    liberales: PartyData
-  }
+export type Party = {
+  peronismo: PartyData,
+  ucr: PartyData, 
+  pro: PartyData,
+  liberales: PartyData,
+}
   
-  // Tipo para una provincia
-  export type Province = {
-    id: string;
-    name: string;
-    x: number;
-    y: number;
-    date?: string;
-    deputies: number;
-    senators: number;
-    population: number;
-    parties: Party
-  };
+// Tipo para una provincia
+export type Province = {
+  id: string;
+  name: string;
+  x: number;
+  y: number;
+  date?: string;
+  deputies: number;
+  senators: number;
+  population: number;
+  parties: Party
+};
+
+// Colores de cada partido
+export const partyColors: Record<keyof Party, string> = {
+  peronismo: "sky",
+  ucr: "red",
+  pro: "yellow",
+  liberales: "purple",
+};
+
+// Orden fijo de los partidos
+export const partyKeys: (keyof Party)[] = [
+  "peronismo",
+  "liberales",
+  "ucr",
+  "pro",
+];
   
   export const provinces: Province[] = [
     { 
