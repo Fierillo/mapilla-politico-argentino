@@ -46,21 +46,17 @@ export default function Home() {
       };
     }
   };
-  const handleMouseLeave = () => {
-    if (!clicked) {
-      setActiveProvince(null);
-    }
-  }
+  
   const handleMouseEnter = (province: Province) => {
     if(clicked) {
       if(activeProvince?.id === province.id) {
-        setActiveProvince(null);
+        setActiveProvince(province);
       } else {
         setClicked(false);
-        setActiveProvince(province);
+        setActiveProvince(null);
       }
     } else {
-      setActiveProvince(province);
+      setActiveProvince(null);
     }
   }
   
@@ -135,10 +131,10 @@ export default function Home() {
                   style={{
                     left: `${province.x}%`,
                     top: `${province.y}%`,
-                    transform: "translate(-50%, -50%)",
+                    transform: "translate(50%, 50%)",
                   }}
                   onMouseEnter={() => handleMouseEnter(province)}
-                  onMouseLeave={() => handleMouseLeave()}
+                  onMouseLeave={() => setActiveProvince(null)}
                   onMouseMove={handleMouseMove}
                   onClick={() => {
                     setClicked(true);
