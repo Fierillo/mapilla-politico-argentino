@@ -75,16 +75,16 @@ export type ChamberBancas = {
       population: 3075646,
       parties: {
         peronismo: { 
-            deputies: { bancas: 18, loseBancas: 8, renewBancas: 10 } 
+            deputies: { bancas: 20, loseBancas: 8, renewBancas: 10 } 
         },
         ucr: { 
-            deputies: { bancas: 8, loseBancas: 3, renewBancas: 3 } 
+            deputies: { bancas: 8, loseBancas: 3, renewBancas: 0 } 
         },
         pro: { 
-            deputies: { bancas: 19, loseBancas: 10, renewBancas: 5 } 
+            deputies: { bancas: 17, loseBancas: 8, renewBancas: 8 } 
         },
         liberales: { 
-            deputies: { bancas: 11, loseBancas: 6, renewBancas: 11 } 
+            deputies: { bancas: 11, loseBancas: 8, renewBancas: 11 } 
         }
       }
     },
