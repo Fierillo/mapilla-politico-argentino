@@ -13,17 +13,25 @@ export default function Home() {
   const [panelPosition, setPanelPosition] = useState({ x: 0, y: 0 });
   const mapContainerRef = useRef<HTMLDivElement>(null);
 
-  // Función para determinar el estado de la provincia
+  const getPointClasses = (province: Province) => {
+    const baseClasses = "absolute w-6 h-6 border-2 border-gray-800 transition-colors duration-200 cursor-pointer";
+  
+    if (province.type === 'national') {
+      return `${baseClasses} rounded-none`;
+    }
+    else {
+      return `${baseClasses} rounded-full`;
+    }
+  };
+  
   const getProvinceStatus = (province: Province) => {
     const parties = ["peronismo", "socialismo", "centro", "liberalismo"] as const;
     
-    // Verificar si hay bancas renovadas (se votó)
     const hasRenewBancas = parties.some(party => 
       province.parties[party].deputies?.renewBancas != null || 
       province.parties[party].senate?.renewBancas != null
     );
     
-    // Verificar si hay bancas en juego (pierde bancas)
     const hasLoseBancas = parties.some(party => 
       (province.parties[party].deputies?.loseBancas || 0) > 0 || 
       (province.parties[party].senate?.loseBancas || 0) > 0
@@ -101,13 +109,31 @@ export default function Home() {
 
   return (
     <main className="bg-blue-950 text-yellow-400 flex min-h-screen flex-col items-center justify-center p-4 md:p-24">
-      <h1 className="flex flex-raw md:text-3xl text-xl mb-8 text-center italic">MAPILLA POLITICO ARGENTINO</h1>
-        <h1 className="flex md:text-3xl text-xl mb-8 text-center">Representación Congresista PROVINCIAL Argentina (2025)</h1>
-
-      <HorizontalBar />
+      <h1 className="flex flex-raw md:text-3xl text-xl mb-8 text-center italic">
+        MAPILLA POLITICO ARGENTINO
+      </h1>
+      <h1 className="flex md:text-3xl text-xl mb-8 text-center">
+        Representación legislativa Argentina (2025)
+      </h1>
       
-      <div className="w-full max-w-3xl">
-        {/* Mapa con círculos interactivos */}
+      <div className="grid grid-cols-3 w-4xl md:w-full">
+        
+        <div className="row-start-1 col-2 space-y-4">
+          <HorizontalBar 
+            title="Bancas NACIONALES en juego" 
+            filterType="national" 
+          />
+          <HorizontalBar 
+            title="Bancas PROVINCIALES en juego" 
+            filterType={null}
+          />
+        </div>
+
+        <div className="row-start-2 mx-5 md:col-3 col-2 text-center w-fit items-right">
+          <DateList provinces={provinces} />
+        </div>
+
+        <div className="row-start-2 col-2 max-w-3xl mb-4">
         <div className="border rounded-lg p-4 bg-white relative" ref={mapContainerRef}>
           <div className="relative w-full mx-auto" style={{ aspectRatio: "0.45", maxWidth: "500px" }}>
             <Image
@@ -119,13 +145,13 @@ export default function Home() {
             />
 
             {provinces.map((province) => {
-              const { color } = getProvinceStatus(province); // Obtener el color del estado
+                const { color } = getProvinceStatus(province);
               const isActive = activeProvince?.id === province.id;
 
               return (
                 <div
                   key={province.id}
-                  className={`absolute w-6 h-6 rounded-full border-2 border-gray-800 transition-colors duration-200 cursor-pointer ${
+                    className={`${getPointClasses(province)} ${
                     isActive ? "bg-blue-500" : `${color} hover:bg-blue-500`
                   }`}
                   style={{
@@ -145,7 +171,6 @@ export default function Home() {
               );
             })}
 
-            {/* Panel de información posicionado dentro del contenedor */}
             {activeProvince && (
               <div
                 className="absolute p-4 border rounded-lg text-white bg-blue-950 shadow-lg z-10"

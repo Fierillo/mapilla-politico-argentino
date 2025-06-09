@@ -3,41 +3,50 @@
 import { ChamberBancas, Party, partyColors, partyKeys, provinces } from "@/src/data/provinces";
 import { useState } from "react";
 
-export default function HorizontalBar() {
+interface HorizontalBarProps {
+  title?: string;
+  filterType?: null | 'national';
+}
+
+export default function HorizontalBar({title, filterType}: HorizontalBarProps) {
   const [selectedParty, setSelectedParty] = useState<keyof Party | null>(null);
-  
-  function sumBancas (party: keyof Party, bancasType: keyof ChamberBancas) {
-    return provinces.reduce((acc, province) => {
-        const partyData = province.parties[party];
-        acc += 
-          (partyData.deputies?.[bancasType] || 0) 
-          + (partyData.senate?.[bancasType] || 0);
-        return acc;
-      },
-      0
-    );
-  }  
+
+  const getSumBancas = (party: keyof Party, bancasType: keyof ChamberBancas) => {
+    const filteredProvinces = provinces.filter(province => {
+      if (filterType === 'national') return province.type === 'national';
+      if (filterType === null) return province.type !== 'national';
+      return true;
+    });
+
+    return filteredProvinces.reduce((acc, province) => {
+      const partyData = province.parties[party];
+      acc += 
+        (partyData.deputies?.[bancasType] || 0) 
+        + (partyData.senate?.[bancasType] || 0);
+      return acc;
+    }, 0);
+  };
   
   const totalLoseBancas = partyKeys.reduce(
-    (acc, party) => acc + sumBancas(party, "loseBancas"),
+    (acc, party) => acc + getSumBancas(party, "loseBancas"),
     0
   );
 
   const sumTotalBancas = partyKeys.reduce(
-    (acc, party) => acc + sumBancas(party, "bancas"),
+    (acc, party) => acc + getSumBancas(party, "bancas"),
     0
   );
   
   return (
     <div className="w-full max-w-3xl mb-4">
       <h2 className="text-lg font-semibold mb-2 text-center">
-        Bancas totales en juego (2025): {totalLoseBancas} / {sumTotalBancas}
+        {title}: {totalLoseBancas} / {sumTotalBancas}
       </h2>
       <div className="flex h-6 border border-gray-300">
       {partyKeys.map((party) => {
-          const securedBancas = sumBancas(party, "bancas") - sumBancas(party, "loseBancas");
-          const loseBancas = sumBancas(party, "loseBancas");
-          const renewBancas = sumBancas(party, "renewBancas");
+          const securedBancas = getSumBancas(party, "bancas") - getSumBancas(party, "loseBancas");
+          const loseBancas = getSumBancas(party, "loseBancas");
+          const renewBancas = getSumBancas(party, "renewBancas");
           const enJuegoNoRenovadas = Math.max(loseBancas - renewBancas, 0); // Bancas en juego no renovadas
           const totalBancas = securedBancas + renewBancas; // Total del partido
 

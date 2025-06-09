@@ -24,6 +24,7 @@ export type Party = {
 export type Province = {
   id: string;
   name: string;
+  type?: string;
   x: number;
   y: number;
   date?: string;
@@ -50,6 +51,35 @@ export const partyKeys: (keyof Party)[] = [
 ];
   
   export const provinces: Province[] = [
+    { 
+        id: "argentina", 
+        name: "Nación", 
+        type: "national",
+        x: 85, 
+        y: 33, 
+        date: "26 de octubre",
+        deputies: 257, 
+        senators: 72, 
+        population: 35912841,
+        parties: {
+          peronismo: {
+              deputies: {bancas: 110, loseBancas: 52},
+              senate: {bancas: 39, loseBancas: 16}
+          },
+          socialismo: {
+              deputies: {bancas: 5, loseBancas: 4},
+              senate: {bancas: 0, loseBancas: 0}
+          },
+          centro: {
+              deputies: {bancas: 103, loseBancas: 63},
+              senate: {bancas: 27, loseBancas: 8}
+          },
+          liberalismo: {
+              deputies: {bancas: 39, loseBancas: 8},
+              senate: {bancas: 6, loseBancas: 0}
+          }
+        }  
+    },
     { 
         id: "buenos-aires", 
         name: "Buenos Aires", 
