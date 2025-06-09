@@ -334,10 +334,10 @@ export const partyKeys: (keyof Party)[] = [
       senators: 0,
       population: 1261294,
       parties: {
-        peronismo: { deputies: { bancas: 29, loseBancas: 13, renewBancas: 13 } },
+        peronismo: { deputies: { bancas: 29, loseBancas: 13, renewBancas: 12 } },
         socialismo: { deputies: { bancas: 0, loseBancas: 0 } },
         centro: { deputies: { bancas: 11, loseBancas: 7, renewBancas: 1 } },
-        liberalismo: { deputies: { bancas: 0, loseBancas: 0, renewBancas: 6 } }
+        liberalismo: { deputies: { bancas: 0, loseBancas: 0, renewBancas: 7 } }
       }
     },
     {
