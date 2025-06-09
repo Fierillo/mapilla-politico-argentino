@@ -10,7 +10,7 @@ import { Province, provinces } from "../data/provinces"
 export default function Home() {
   const [activeProvince, setActiveProvince] = useState<Province | null>(null);
   const [clicked, setClicked] = useState<boolean>(false);
-  const [panelPosition, setPanelPosition] = useState({ x: 0, y: 0 });
+  const [panelPosition, setPanelPosition] = useState({ mouseXCoord: 0, mouseYCoord: 0 });
   const mapContainerRef = useRef<HTMLDivElement>(null);
 
   const getPointClasses = (province: Province) => {
@@ -68,7 +68,6 @@ export default function Home() {
     }
   }
   
-  // Manejar el movimiento del mouse y mantener el panel dentro del contenedor
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!mapContainerRef.current) return;
 
@@ -76,25 +75,23 @@ export default function Home() {
     const panelWidth = 300;
     const panelHeight = 300;
 
-    // Coordenadas del mouse relativas al contenedor del mapa
-    let x = e.clientX - mapRect.left + 10;
-    let y = e.clientY - mapRect.top + 10;
+    let mouseXCoord = e.clientX - mapRect.left + 10;
+    let mouseYCoord = e.clientY - mapRect.top + 10;
 
-    // Asegurarse de que el panel no se salga del contenedor
-    if (x + panelWidth > mapRect.width) {
-      x = mapRect.width - panelWidth;
+    if (mouseXCoord + panelWidth > mapRect.width) {
+      mouseXCoord = mapRect.width - panelWidth;
     }
-    if (x < 0) {
-      x = 0;
+    if (mouseXCoord < 0) {
+      mouseXCoord = 0;
     }
-    if (y + panelHeight > mapRect.height) {
-      y = mapRect.height - panelHeight;
+    if (mouseYCoord + panelHeight > mapRect.height) {
+      mouseYCoord = mapRect.height - panelHeight;
     }
-    if (y < 0) {
-      y = 0;
+    if (mouseYCoord < 0) {
+      mouseYCoord = 0;
     }
 
-    setPanelPosition({ x, y });
+    setPanelPosition({ mouseXCoord, mouseYCoord });
   };
 
   const liberalDeputies = activeProvince?.parties.liberalismo.deputies
@@ -129,11 +126,7 @@ export default function Home() {
           />
         </div>
 
-        {/*<div className="row-start-2 mx-5 md:col-3 col-2 text-center w-fit items-right">
-          <DateList provinces={provinces} />
-        </div>*/}
-
-        <div className="row-start-2 col-2 max-w-3xl mb-4">
+        <div className="row-start-2 col-2 max-w-4xl mb-4">
         <div className="border rounded-lg p-4 bg-white relative" ref={mapContainerRef}>
           <div className="relative w-full mx-auto" style={{ aspectRatio: "0.45", maxWidth: "500px" }}>
             <Image
@@ -175,8 +168,8 @@ export default function Home() {
               <div
                 className="absolute p-4 border rounded-lg text-white bg-blue-950 shadow-lg z-10"
                 style={{
-                  left: panelPosition.x,
-                  top: panelPosition.y,
+                  left: panelPosition.mouseXCoord,
+                  top: panelPosition.mouseYCoord,
                 }}
               >
                 <h2 className="text-xl font-bold mb-2 text-yellow-400 text-center">
