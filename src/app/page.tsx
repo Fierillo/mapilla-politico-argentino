@@ -129,9 +129,9 @@ export default function Home() {
           />
         </div>
 
-        <div className="row-start-2 mx-5 md:col-3 col-2 text-center w-fit items-right">
+        {/*<div className="row-start-2 mx-5 md:col-3 col-2 text-center w-fit items-right">
           <DateList provinces={provinces} />
-        </div>
+        </div>*/}
 
         <div className="row-start-2 col-2 max-w-3xl mb-4">
         <div className="border rounded-lg p-4 bg-white relative" ref={mapContainerRef}>
