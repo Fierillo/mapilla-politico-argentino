@@ -206,10 +206,11 @@ export default function Home() {
                   partido: bancas actuales (-en juego/+ganadas) futuras
                 </div>
                 <div className="mt-2 text-center">
-                  <p className="text-sm mt-4 text-right">Población: {activeProvince.population.toLocaleString()}</p>
+                    <p className="text-sm mt-4 text-right">Electores: {activeProvince.population.toLocaleString()}</p>
+                  </div>
                 </div>
+              )}
               </div>
-            )}
           </div>
         </div>
       </div>

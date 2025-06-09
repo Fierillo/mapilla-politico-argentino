@@ -58,7 +58,7 @@ export const partyKeys: (keyof Party)[] = [
         date: "7 de septiembre",
         deputies: 92, 
         senators: 46, 
-        population: 17541141,
+        population: 13115144,
         parties: {
           peronismo: {
               deputies: {bancas: 37, loseBancas: 19},
@@ -78,8 +78,6 @@ export const partyKeys: (keyof Party)[] = [
           }
         }  
     },
-  
-  
     {
       id: "caba",
       name: "Ciudad Autónoma de Buenos Aires",
@@ -88,7 +86,7 @@ export const partyKeys: (keyof Party)[] = [
       date: "18 de mayo",
       deputies: 60,
       senators: 0,
-      population: 3075646,
+      population: 2528223,
       parties: {
         peronismo: { 
             deputies: { bancas: 20, loseBancas: 8, renewBancas: 10 } 
@@ -112,7 +110,7 @@ export const partyKeys: (keyof Party)[] = [
       date: "26 de octubre",
       deputies: 41,
       senators: 16,
-      population: 415438,
+      population: 340478,
       parties: {
         peronismo: {
           deputies: { bancas: 24, loseBancas: 13 },
@@ -140,7 +138,7 @@ export const partyKeys: (keyof Party)[] = [
       date: "11 de mayo",
       deputies: 32,
       senators: 0,
-      population: 1204541,
+      population: 1001910,
       parties: {
         peronismo: { deputies: { bancas: 17, loseBancas: 9, renewBancas: 8 } },
         socialismo: { deputies: { bancas: 0, loseBancas: 0, renewBancas: 0 } },
@@ -155,7 +153,7 @@ export const partyKeys: (keyof Party)[] = [
       y: 65,
       deputies: 27,
       senators: 0,
-      population: 618994,
+      population: 474701,
       parties: {
         peronismo: { deputies: { bancas: 7, loseBancas: 0 } },
         socialismo: { deputies: { bancas: 1, loseBancas: 0 } },
@@ -170,7 +168,7 @@ export const partyKeys: (keyof Party)[] = [
       y: 30,
       deputies: 70,
       senators: 0,
-      population: 3760450,
+      population: 3063956,
       parties: {
         peronismo: { deputies: { bancas: 39, loseBancas: 0 }},
         socialismo: { deputies: { bancas: 1, loseBancas: 0 }},
@@ -186,7 +184,7 @@ export const partyKeys: (keyof Party)[] = [
       date: "31 de agosto",
       deputies: 30,
       senators: 15,
-      population: 1120801,
+      population: 933441,
       parties: {
         peronismo: {
           deputies: { bancas: 7, loseBancas: 1 },
@@ -213,7 +211,7 @@ export const partyKeys: (keyof Party)[] = [
       y: 30,
       deputies: 34,
       senators: 17,
-      population: 1385961,
+      population: 1144216,
       parties: {
         peronismo: {
           deputies: { bancas: 14, loseBancas: 0 },
@@ -241,7 +239,7 @@ export const partyKeys: (keyof Party)[] = [
       date: "29 de junio",
       deputies: 30,
       senators: 0,
-      population: 605193,
+      population: 482733,
       parties: {
         peronismo: { deputies: { bancas: 22, loseBancas: 9 } },
         socialismo: { deputies: { bancas: 0, loseBancas: 0 } },
@@ -257,7 +255,7 @@ export const partyKeys: (keyof Party)[] = [
       date: "11 de mayo",
       deputies: 48,
       senators: 0,
-      population: 770881,
+      population: 590695,
       parties: {
         peronismo: { deputies: { bancas: 12, loseBancas: 6, renewBancas: 3 } },
         socialismo: { deputies: { bancas: 3, loseBancas: 0, renewBancas: 2 } },
@@ -272,7 +270,7 @@ export const partyKeys: (keyof Party)[] = [
       y: 48,
       deputies: 30,
       senators: 0,
-      population: 358428,
+      population: 300103,
       parties: {
         peronismo: { deputies: { bancas: 17, loseBancas: 0 } },
         socialismo: { deputies: { bancas: 0, loseBancas: 0 } },
@@ -288,7 +286,7 @@ export const partyKeys: (keyof Party)[] = [
       date: "26 de octubre",
       deputies: 36,
       senators: 0,
-      population: 393531,
+      population: 304344,
       parties: {
         peronismo: { deputies: { bancas: 32, loseBancas: 15 } },
         socialismo: { deputies: { bancas: 0, loseBancas: 0 } },
@@ -304,7 +302,7 @@ export const partyKeys: (keyof Party)[] = [
       date: "26 de octubre",
       deputies: 48,
       senators: 38,
-      population: 1990338,
+      population: 1494214,
       parties: {
         peronismo: {
           deputies: { bancas: 10, loseBancas: 7 },
@@ -332,7 +330,7 @@ export const partyKeys: (keyof Party)[] = [
       date: "8 de junio",
       deputies: 40,
       senators: 0,
-      population: 1261294,
+      population: 988884,
       parties: {
         peronismo: { deputies: { bancas: 29, loseBancas: 13, renewBancas: 12 } },
         socialismo: { deputies: { bancas: 0, loseBancas: 0 } },
@@ -347,7 +345,7 @@ export const partyKeys: (keyof Party)[] = [
       y: 48,
       deputies: 35,
       senators: 0,
-      population: 664057,
+      population: 553755,
       parties: {
         peronismo: { deputies: { bancas: 14, loseBancas: 0 } },
         socialismo: { deputies: { bancas: 2, loseBancas: 0 } },
@@ -362,7 +360,7 @@ export const partyKeys: (keyof Party)[] = [
       y: 55,
       deputies: 46,
       senators: 0,
-      population: 747610,
+      population: 595737,
       parties: {
         peronismo: { deputies: { bancas: 20, loseBancas: 0 } },
         socialismo: { deputies: { bancas: 0, loseBancas: 0 } },
@@ -378,7 +376,7 @@ export const partyKeys: (keyof Party)[] = [
       date: "11 de mayo",
       deputies: 60,
       senators: 23,
-      population: 1424397,
+      population: 1090792,
       parties: {
         peronismo: {
           deputies: { bancas: 40, loseBancas: 19, renewBancas: 20 },
@@ -405,7 +403,7 @@ export const partyKeys: (keyof Party)[] = [
       y: 30,
       deputies: 36,
       senators: 0,
-      population: 781217,
+      population: 608857,
       parties: {
         peronismo: { deputies: { bancas: 23, loseBancas: 0 } },
         socialismo: { deputies: { bancas: 0, loseBancas: 0 } },
@@ -421,7 +419,7 @@ export const partyKeys: (keyof Party)[] = [
       date: "11 de mayo",
       deputies: 43,
       senators: 9,
-      population: 508328,
+      population: 421742,
       parties: {
         peronismo: {
           deputies: { bancas: 26, loseBancas: 22, renewBancas: 8 },
@@ -448,7 +446,7 @@ export const partyKeys: (keyof Party)[] = [
       y: 82,
       deputies: 24,
       senators: 0,
-      population: 365698,
+      population: 265400,
       parties: {
         peronismo: { deputies: { bancas: 23, loseBancas: 0 } },
         socialismo: { deputies: { bancas: 0, loseBancas: 0 } },
@@ -463,7 +461,7 @@ export const partyKeys: (keyof Party)[] = [
       y: 28,
       deputies: 50,
       senators: 19,
-      population: 3536418,
+      population: 2822834,
       parties: {
         peronismo: {
           deputies: { bancas: 13, loseBancas: 0 },
@@ -491,7 +489,7 @@ export const partyKeys: (keyof Party)[] = [
       date: "26 de octubre",
       deputies: 40,
       senators: 0,
-      population: 978313,
+      population: 813802,
       parties: {
         peronismo: { deputies: { bancas: 35, loseBancas: 35 } },
         socialismo: { deputies: { bancas: 0, loseBancas: 0 } },
@@ -506,7 +504,7 @@ export const partyKeys: (keyof Party)[] = [
       y: 96,
       deputies: 15,
       senators: 0,
-      population: 173432,
+      population: 147997,
       parties: {
         peronismo: { deputies: { bancas: 8, loseBancas: 0 } },
         socialismo: { deputies: { bancas: 0, loseBancas: 0 } },
@@ -521,7 +519,7 @@ export const partyKeys: (keyof Party)[] = [
       y: 15,
       deputies: 49,
       senators: 0,
-      population: 1694656,
+      population: 1321055,
       parties: {
         peronismo: { deputies: { bancas: 37, loseBancas: 0 } },
         socialismo: { deputies: { bancas: 0, loseBancas: 0 } },
