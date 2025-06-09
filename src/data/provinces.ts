@@ -301,7 +301,7 @@ export const partyKeys: (keyof Party)[] = [
       name: "Mendoza",
       x: 20,
       y: 40,
-      date: "octubre?",
+      date: "26 de octubre",
       deputies: 48,
       senators: 38,
       population: 1990338,
@@ -334,10 +334,10 @@ export const partyKeys: (keyof Party)[] = [
       senators: 0,
       population: 1261294,
       parties: {
-        peronismo: { deputies: { bancas: 29, loseBancas: 13 } },
+        peronismo: { deputies: { bancas: 29, loseBancas: 13, renewBancas: 13 } },
         socialismo: { deputies: { bancas: 0, loseBancas: 0 } },
-        centro: { deputies: { bancas: 11, loseBancas: 7 } },
-        liberalismo: { deputies: { bancas: 0, loseBancas: 0 } }
+        centro: { deputies: { bancas: 11, loseBancas: 7, renewBancas: 1 } },
+        liberalismo: { deputies: { bancas: 0, loseBancas: 0, renewBancas: 6 } }
       }
     },
     {
