@@ -39,7 +39,7 @@ export default function HorizontalBar({title, filterType}: HorizontalBarProps) {
   
   return (
     <div className="w-full max-w-3xl mb-4">
-      <h2 className="text-lg font-semibold mb-2 text-center">
+      <h2 className="md:text-lg text-sm mb-2 text-center">
         {title}: {totalLoseBancas} / {sumTotalBancas}
       </h2>
       <div className="flex h-6 border border-gray-300">

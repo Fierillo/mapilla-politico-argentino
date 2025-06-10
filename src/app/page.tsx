@@ -113,9 +113,9 @@ export default function Home() {
         Representación legislativa Argentina (2025)
       </h1>
       
-      <div className="grid grid-cols-3 w-4xl md:w-full">
+      <div className="flex flex-col w-xl md:w-full items-center">
         
-        <div className="row-start-1 col-2 space-y-4">
+        <div className="flex flex-col md:w-full w-xs md:text-xl text-md items-center space-y-4 ">
           <HorizontalBar 
             title="Bancas NACIONALES en juego" 
             filterType="national" 
@@ -126,7 +126,7 @@ export default function Home() {
           />
         </div>
 
-        <div className="row-start-2 col-2 max-w-4xl mb-4">
+        <div className="flex flex-col mb-4 md:w-xl w-xs">
         <div className="border rounded-lg p-4 bg-white relative" ref={mapContainerRef}>
           <div className="relative w-full mx-auto" style={{ aspectRatio: "0.45", maxWidth: "500px" }}>
             <Image
