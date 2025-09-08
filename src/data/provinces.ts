@@ -99,8 +99,8 @@ export const partyKeys: (keyof Party)[] = [
               senate: {bancas: 0, loseBancas: 0}
           },
           centro: {
-              deputies: {bancas: 28, loseBancas: 20, renewBancas: 5},
-              senate: {bancas: 7, loseBancas: 6, renewBancas: 2}
+              deputies: {bancas: 28, loseBancas: 13, renewBancas: 5},
+              senate: {bancas: 13, loseBancas: 6, renewBancas: 2}
           },
           liberalismo: {
               deputies: {bancas: 24, loseBancas: 11, renewBancas: 18},
