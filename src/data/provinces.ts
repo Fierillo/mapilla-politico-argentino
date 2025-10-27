@@ -63,19 +63,19 @@ export const partyKeys: (keyof Party)[] = [
         population: 35912841,
         parties: {
           peronismo: {
-              deputies: {bancas: 110, loseBancas: 52},
-              senate: {bancas: 39, loseBancas: 16}
+              deputies: {bancas: 110, loseBancas: 52, renewBancas: 43},
+              senate: {bancas: 39, loseBancas: 16, renewBancas: 7}
           },
           socialismo: {
-              deputies: {bancas: 5, loseBancas: 4},
-              senate: {bancas: 0, loseBancas: 0}
+              deputies: {bancas: 5, loseBancas: 4, renewBancas: 3},
+              senate: {bancas: 0, loseBancas: 0, renewBancas: 0}
           },
           centro: {
-              deputies: {bancas: 103, loseBancas: 63},
+              deputies: {bancas: 103, loseBancas: 63, renewBancas: 17},
               senate: {bancas: 27, loseBancas: 8}
           },
           liberalismo: {
-              deputies: {bancas: 39, loseBancas: 8},
+              deputies: {bancas: 39, loseBancas: 8, renewBancas: 64},
               senate: {bancas: 6, loseBancas: 0}
           }
         }  
@@ -92,7 +92,7 @@ export const partyKeys: (keyof Party)[] = [
         parties: {
           peronismo: {
               deputies: {bancas: 38, loseBancas: 20, renewBancas: 21},
-              senate: {bancas: 21, loseBancas: 10, renewBancas: 13}
+              senate: {bancas: 21, loseBancas: 10, renewBancas: 7}
           },
           socialismo: {
               deputies: {bancas: 2, loseBancas: 2, renewBancas: 2},
@@ -100,11 +100,11 @@ export const partyKeys: (keyof Party)[] = [
           },
           centro: {
               deputies: {bancas: 28, loseBancas: 13, renewBancas: 5},
-              senate: {bancas: 13, loseBancas: 6, renewBancas: 2}
+              senate: {bancas: 13, loseBancas: 6, renewBancas: 4}
           },
           liberalismo: {
               deputies: {bancas: 24, loseBancas: 11, renewBancas: 18},
-              senate: {bancas: 12, loseBancas: 5, renewBancas: 8}
+              senate: {bancas: 12, loseBancas: 5, renewBancas: 13}
           }
         }  
     },
