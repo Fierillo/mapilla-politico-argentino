@@ -92,7 +92,7 @@ export const partyKeys: (keyof Party)[] = [
         parties: {
           peronismo: {
               deputies: {bancas: 38, loseBancas: 20, renewBancas: 21},
-              senate: {bancas: 21, loseBancas: 0 }
+              senate: {bancas: 21, loseBancas: 0, renewBancas: 13 }
           },
           socialismo: {
               deputies: {bancas: 2, loseBancas: 2, renewBancas: 2},
@@ -100,11 +100,11 @@ export const partyKeys: (keyof Party)[] = [
           },
           centro: {
               deputies: {bancas: 28, loseBancas: 13, renewBancas: 5},
-              senate: {bancas: 13, loseBancas: 0 }
+              senate: {bancas: 13, loseBancas: 0, renewBancas: 2 }
           },
           liberalismo: {
               deputies: {bancas: 24, loseBancas: 11, renewBancas: 18},
-              senate: {bancas: 12, loseBancas: 0 }
+              senate: {bancas: 12, loseBancas: 0, renewBancas: 8 }
           }
         }  
     },
