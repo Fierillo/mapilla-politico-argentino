@@ -1,0 +1,23 @@
+packages:
+  - '.'
+
+minimumReleaseAge: 4320
+minimumReleaseAgeStrict: true
+minimumReleaseAgeIgnoreMissingTime: false
+
+trustPolicy: no-downgrade
+trustPolicyExclude:
+  - 'eslint-import-resolver-typescript@3.10.1'
+  - 'semver@6.3.1'
+  - 'undici-types@6.19.8'
+trustLockfile: false
+blockExoticSubdeps: true
+strictDepBuilds: true
+allowBuilds:
+  'sharp': true
+  '@tailwindcss/oxide': true
+  'unrs-resolver': true
+  'semver@6.3.1': true
+  'semver@7.7.2': true
+  'tailwind-merge@3.3.0': true
+  'undici-types@6.19.8': true
